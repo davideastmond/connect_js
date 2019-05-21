@@ -28,3 +28,17 @@ module.exports = {
     })
   }
 }
+
+module.exports = {
+  getArguments: function(count) {
+    // Helper function returns an array of arguments from the console input
+    // adhering to the count specified
+    
+    const vals = process.argv.slice(2);
+    if (vals.length != count) {
+      console.log("Invalid number of arguments received from input");
+    } else {
+      return vals;
+    }
+  }
+}
