@@ -11,20 +11,20 @@ const client = new pg.Client({
 });
 
 module.exports = {
-  runQuery: function (query, callback) {
-    client.connect((err) => {
-    if (err) {
-      return console.error("Connection Error", err);
-    }
-
-    client.query(query, (err, res) => {
+    runQuery: function (query, callback) {
+      client.connect((err) => {
       if (err) {
-        console.log("error");
-      } else {
-        callback(res);
-        client.end();
+        return console.error("Connection Error", err);
       }
+
+      client.query(query, (err, res) => {
+        if (err) {
+          console.log("error");
+        } else {
+          callback(res);
+          client.end();
+        }
+      })
     })
-  })
-}
+  }
 }
