@@ -30,7 +30,7 @@ function searchForName(connector, searchQuery) {
   });
 
   function displayResult(res) {
-    /* Formats the results as per the exercise requirements */
+    /* Helper function: formats the results as per the exercise requirements */
     if (res) {
       console.log(`Found ${res.length} result(s) by the name '${userInput}'`)
       for (let i = 0; i < res.length; i++ ) {
@@ -39,7 +39,7 @@ function searchForName(connector, searchQuery) {
       }
     }
   }
-  
+
   function getFormattedDate(dateString) {
     /* Returns a date in YYYY-MM-dd*/
     const date_input = new Date(dateString);
